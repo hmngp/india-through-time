@@ -1,0 +1,219 @@
+:root {
+  /* Emerald archive palette — layered green depth */
+  --bg-deep: #0f1b14;
+  --bg: #162820;
+  --bg-elevated: #1e3329;
+  --bg-raised: #253d31;
+  --bg-hover: #2d4a3b;
+
+  --surface: rgba(126, 232, 212, 0.04);
+  --surface-strong: rgba(126, 232, 212, 0.08);
+  --border-subtle: rgba(126, 232, 212, 0.10);
+  --border-strong: rgba(126, 232, 212, 0.20);
+
+  --text: #f4f7f5;
+  --text-muted: rgba(244, 247, 245, 0.65);
+  --text-soft: rgba(244, 247, 245, 0.45);
+
+  --mint: #7ee8d4;
+  --mint-soft: rgba(126, 232, 212, 0.35);
+  --mint-glow: rgba(126, 232, 212, 0.55);
+
+  /* Territory fill on map — solid mid green */
+  --map-fill: #4d7568;
+  --map-stroke: #8fd9c4;
+
+  --cream: #f2ebe3;
+  --cream-dark: #2c2520;
+
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Fraunces', 'Georgia', serif;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-pill: 999px;
+
+  --shadow-glow: 0 0 40px rgba(126, 232, 212, 0.12);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a, button, .interactive,
+input[type="range"],
+.leaflet-interactive {
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+::selection {
+  background: var(--mint-soft);
+  color: var(--bg);
+}
+
+.era-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.app-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  min-height: 0;
+}
+
+.app-body > * {
+  min-height: 0;
+}
+
+.amber-text {
+  color: var(--text-muted);
+}
+
+/* Leaflet base */
+.leaflet-container {
+  background: var(--bg-deep) !important;
+  font-family: var(--font-sans) !important;
+}
+
+.leaflet-tile-pane {
+  opacity: 0.85;
+  filter: grayscale(0.1) brightness(0.85);
+}
+
+.leaflet-control-zoom {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.leaflet-control-zoom a {
+  background: var(--bg-raised) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--bg-hover) !important;
+  color: var(--mint) !important;
+}
+
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--bg-elevated) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
+  padding: 0 !important;
+  overflow: hidden;
+  font-family: var(--font-sans) !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  min-width: 240px;
+}
+
+.leaflet-popup-tip {
+  background: var(--bg-elevated) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.leaflet-popup-close-button {
+  color: var(--text-soft) !important;
+  font-size: 20px !important;
+  padding: 6px 10px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: var(--mint) !important;
+}
+
+/* Splash loader */
+.app-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 50000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-deep);
+}
+
+.app-loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.app-loader-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(126, 232, 212, 0.3));
+  animation: loaderLogoPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes loaderLogoPulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+

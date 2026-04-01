@@ -1,0 +1,70 @@
+.map-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+}
+
+.map-layer-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 400;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: var(--bg-raised);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  box-shadow: var(--shadow-glow);
+}
+
+.map-layer-toggle:hover {
+  border-color: var(--mint-soft);
+  color: var(--mint);
+}
+
+.map-layer-toggle.active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+.map-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Territory glow — base styling; opacity controlled by JS animation */
+.map-container .leaflet-overlay-pane svg path.map-territory-glow {
+  filter: drop-shadow(0 0 4px rgba(126, 232, 212, 0.5));
+  will-change: fill-opacity, stroke-opacity, filter;
+}
+
+.map-container .leaflet-overlay-pane svg path.map-territory-glow--exit {
+  filter: drop-shadow(0 0 2px rgba(126, 232, 212, 0.2));
+  will-change: fill-opacity, stroke-opacity, filter;
+}
+
+/* White glowing event dots */
+.map-container .leaflet-overlay-pane svg path.incident-marker-path,
+.map-container .leaflet-overlay-pane svg circle.incident-marker-dot {
+  filter:
+    drop-shadow(0 0 4px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.55));
+}
+
+.map-container .leaflet-overlay-pane svg path.incident-connection-line {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

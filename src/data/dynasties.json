@@ -1,0 +1,39 @@
+{
+  "maurya_peak": [
+    {"name": "Chandragupta Maurya", "reign": "322-298 BCE", "parent": null},
+    {"name": "Bindusara", "reign": "298-273 BCE", "parent": "Chandragupta Maurya"},
+    {"name": "Ashoka", "reign": "268-232 BCE", "parent": "Bindusara"}
+  ],
+  "maurya_early": [
+    {"name": "Chandragupta Maurya", "reign": "322-298 BCE", "parent": null}
+  ],
+  "gupta_empire": [
+    {"name": "Chandragupta I", "reign": "319-335 CE", "parent": null},
+    {"name": "Samudragupta", "reign": "335-375 CE", "parent": "Chandragupta I"},
+    {"name": "Chandragupta II", "reign": "375-415 CE", "parent": "Samudragupta"},
+    {"name": "Kumaragupta I", "reign": "415-455 CE", "parent": "Chandragupta II"},
+    {"name": "Skandagupta", "reign": "455-467 CE", "parent": "Kumaragupta I"}
+  ],
+  "mughal_peak": [
+    {"name": "Babur", "reign": "1526-1530", "parent": null},
+    {"name": "Humayun", "reign": "1530-1540, 1555-1556", "parent": "Babur"},
+    {"name": "Akbar", "reign": "1556-1605", "parent": "Humayun"},
+    {"name": "Jahangir", "reign": "1605-1627", "parent": "Akbar"},
+    {"name": "Shah Jahan", "reign": "1628-1658", "parent": "Jahangir"},
+    {"name": "Aurangzeb", "reign": "1658-1707", "parent": "Shah Jahan"}
+  ],
+  "mughal_early": [
+    {"name": "Babur", "reign": "1526-1530", "parent": null},
+    {"name": "Humayun", "reign": "1530-1540", "parent": "Babur"}
+  ],
+  "delhi_sultanate_early": [
+    {"name": "Qutb ud-Din Aibak", "reign": "1206-1210", "parent": null},
+    {"name": "Iltutmish", "reign": "1211-1236", "parent": null},
+    {"name": "Razia Sultana", "reign": "1236-1240", "parent": "Iltutmish"}
+  ],
+  "chola_empire": [
+    {"name": "Rajaraja Chola I", "reign": "985-1014", "parent": null},
+    {"name": "Rajendra Chola I", "reign": "1014-1044", "parent": "Rajaraja Chola I"},
+    {"name": "Rajadhiraja Chola I", "reign": "1044-1054", "parent": "Rajendra Chola I"}
+  ]
+}
