@@ -52,14 +52,3 @@
   50% { opacity: 0; }
 }
 
-.incident-marker {
-  animation: blipWhite 2.4s ease-in-out infinite;
-}
-
-.incident-marker-battle {
-  animation: blipWhite 2s ease-in-out infinite;
-}
-
-.incident-ping {
-  animation: pulseGlowMint 2.5s ease-in-out infinite;
-}

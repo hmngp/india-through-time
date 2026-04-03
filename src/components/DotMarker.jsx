@@ -17,7 +17,6 @@ export default function DotMarker({ incident, variant = 'default' }) {
         opacity: 0.95,
         className: 'incident-marker-dot',
       }}
-      className={`incident-marker ${isBattle ? 'incident-marker-battle' : ''}`}
     >
       <Popup
         className="dot-popup-wrapper"
@@ -54,7 +53,6 @@ export default function DotMarker({ incident, variant = 'default' }) {
           opacity: 0.35,
           className: 'incident-marker-ring',
         }}
-        className="incident-ping"
       />
     </CircleMarker>
   )
